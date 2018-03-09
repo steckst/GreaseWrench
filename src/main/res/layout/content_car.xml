@@ -9,55 +9,55 @@
     tools:showIn="@layout/activity_car">
 
     <TextView
-        android:id="@+id/carMake"
+        android:id="@+id/ccarMake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="16dp"
-        android:textSize="20sp"
+        android:layout_marginTop="52dp"
         android:text="Car Make"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/carModel"
+        android:id="@+id/ccarModel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
+        android:layout_marginEnd="80dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:textSize="20sp"
+        android:layout_marginTop="52dp"
         android:text="Car Model"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.682"
         app:layout_constraintStart_toEndOf="@+id/carMake"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/carYear"
+        android:id="@+id/ccarYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="80dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="28dp"
-        android:textSize="20sp"
         android:text="Car Year"
-        app:layout_constraintBottom_toTopOf="@+id/enterOilChange"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOilChange"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/carMileage"
+        android:id="@+id/ccarMileage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="64dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:text="Car Mileage"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/enterOilChange"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOilChange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toEndOf="@+id/carYear"
@@ -65,20 +65,21 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/enterOilChange"
+        android:id="@+id/buttonOilChange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="128dp"
         android:background="@drawable/button_shape"
         android:text="@string/enter_oil_change"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.345"
+        app:layout_constraintHorizontal_bias="0.336"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="192dp" />
+        app:layout_constraintTop_toBottomOf="@+id/ccarModel" />
 
     <Button
-        android:id="@+id/enterNewMaint"
+        android:id="@+id/buttonNewMaint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -89,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterOilChange" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonOilChange" />
 
     <Button
         android:id="@+id/viewMaintHist"
@@ -105,7 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterNewMaint"
+        app:layout_constraintTop_toBottomOf="@+id/buttonNewMaint"
         app:layout_constraintVertical_bias="0.041" />
 
 </android.support.constraint.ConstraintLayout>

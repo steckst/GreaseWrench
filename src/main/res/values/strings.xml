@@ -19,4 +19,5 @@
     <string name="title_activity_enter_oil_change">EnterOilChangeActivity</string>
     <string name="enter_date_label">Enter Date:</string>
     <string name="title_activity_select_car">SelectCarActivity</string>
+    <string name="oilChangeStr">Oil Change</string>
 </resources>

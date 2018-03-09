@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class CarActivity extends AppCompatActivity {
@@ -19,29 +20,45 @@ public class CarActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        Bundle userSelectedCar = intent.getExtras();
+        final Bundle userSelectedCar = intent.getExtras();
 
-        TextView carMake = findViewById(R.id.carMake);
+        // Display the user selected car data
+        TextView carMake = findViewById(R.id.ccarMake);
         carMake.setText(userSelectedCar.getString(MainActivity.CAR_MAKE));
 
-        TextView carModel = findViewById(R.id.carModel);
-        carModel.setText(userSelectedCar.getString(MainActivity.CAR_MODEL));
+        TextView carModel = findViewById(R.id.ccarModel);
+        carModel.setText(intent.getStringExtra(MainActivity.CAR_MODEL));
 
-        TextView carYear = findViewById(R.id.carYear);
+        TextView carYear = findViewById(R.id.ccarYear);
         carYear.setText(userSelectedCar.getString(MainActivity.CAR_YEAR));
 
-        TextView carMileage = findViewById(R.id.carMileage);
+        TextView carMileage = findViewById(R.id.ccarMileage);
         carMileage.setText(userSelectedCar.getString(MainActivity.CAR_MILEAGE));
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        //steup button on click listeners
+        Button oilChangeCarButton = (Button) findViewById(R.id.buttonOilChange);
+        oilChangeCarButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                Intent oilChangeIntent = new Intent();
+                oilChangeIntent.setClass(CarActivity.this, EnterOilChangeActivity.class);
+                oilChangeIntent.putExtras(userSelectedCar);
+                startActivity(oilChangeIntent);
+            }
+        });
+
+
+
+/*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
     }
 
 }

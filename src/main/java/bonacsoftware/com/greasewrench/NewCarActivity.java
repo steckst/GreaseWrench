@@ -2,17 +2,22 @@ package bonacsoftware.com.greasewrench;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import bonacsoftware.com.greasewrench.GreaseWrenchDBHelper;
 
 public class NewCarActivity extends AppCompatActivity {
 
     SQLiteDatabase dbHandle = null;
     GreaseWrenchDBHelper dbHelper = null;
+    private ConstraintLayout localLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +49,17 @@ public class NewCarActivity extends AppCompatActivity {
 
                 dbHandle = dbHelper.getWritableDatabase();
 
-                dbHelper.addCarInformation(carInfo,dbHandle);  // add new car to DB
+                if (dbHelper.addCarInformation(carInfo,dbHandle) == true){
+                  // add new car to DB
+
+                    localLayout = (ConstraintLayout) findViewById(R.id.newCarActivityLayout);
+
+                    Toast.makeText(v.getContext(),"New Car Has Been Added",Toast.LENGTH_LONG).show();
+                }
+
+                dbHelper.close();
+
+                finish();
 
                 //new Intent(this, NewCarActivity.class);
             }

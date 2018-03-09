@@ -109,9 +109,9 @@ public class GreaseWrenchDBHelper extends SQLiteOpenHelper {
 	*		none
 	* Purpose:
  	*/
-    public void addCarInformation(CarInfo Info, SQLiteDatabase dbHandle) {
+    public boolean addCarInformation(CarInfo Info, SQLiteDatabase dbHandle) {
 
-
+        boolean retValue = true;
         ContentValues values = new ContentValues();
 
         if (dbHandle.isOpen()) {
@@ -125,9 +125,10 @@ public class GreaseWrenchDBHelper extends SQLiteOpenHelper {
 
             if (dbHandle.insert(GreaseWrenchContract.CarInformation.TABLE_NAME, null, values) == -1) {
                 Log.d(android.content.ContentValues.TAG, "GreaseWrechDBHelper.addCarInformation(): Error inserting Car Information record ");
+                retValue = false;
             }
         }
-
+        return retValue;
 
     }
 
@@ -601,7 +602,9 @@ public class GreaseWrenchDBHelper extends SQLiteOpenHelper {
     * Purpose:
     *
      */
-    public void addMaintenanceRecord(SQLiteDatabase dbHandle, CarMaintHistory CarHist) {
+    public boolean addMaintenanceRecord(SQLiteDatabase dbHandle, CarMaintHistory CarHist) {
+
+        boolean retVal = true;
 
         if (dbHandle.isOpen()) {
             try {
@@ -618,10 +621,14 @@ public class GreaseWrenchDBHelper extends SQLiteOpenHelper {
 
             } catch (android.database.SQLException e) {
                 Log.d(android.content.ContentValues.TAG, "GreaseWrechDBHelper.addMaintenanceRecord(): Exception occured performing database query " + e.getMessage());
+                retVal = false;
             }
         } else {
             Log.d(android.content.ContentValues.TAG, "GreaseWrechDBHelper.addMaintenanceRecord(): Database is not open for loading all CarInfo records");
+            retVal = false;
         }
+
+        return retVal;
     }
 
     /*

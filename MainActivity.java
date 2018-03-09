@@ -12,11 +12,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import bonacsoftware.com.greasewrench.GreaseWrenchDBHelper;
+import bonacsoftware.com.*;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
     GreaseWrenchDBHelper dbHelper = null;
-    public CarInfo selectedCar = null;
+    public static CarInfo selectedCar = null;
+
 
     //Constants for passing CarInfo data between Activities
     private static final int SELECT_CAR_REQUEST = 1111;
@@ -124,6 +128,11 @@ public class MainActivity extends AppCompatActivity {
                 selectedCar.setCarYear(userSelectedCar.getString(CAR_YEAR).toString());
                 selectedCar.setCarMileage(userSelectedCar.getString(CAR_MILEAGE).toString());
                 selectedCar.setCarID(userSelectedCar.getLong(CAR_ID));
+
+                // set the global variable that holds the users selected car
+                // see AndroidManifest.xml
+                SelectedCarInfo theCar = (SelectedCarInfo)getApplication();
+                theCar.setData(selectedCar);
 
                 Intent carActivity = new Intent();
                 carActivity.setClass(MainActivity.this, CarActivity.class);

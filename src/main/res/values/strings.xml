@@ -12,11 +12,17 @@
     <string name="car_year">Car Year:</string>
     <string name="car_mileage">Car Mileage:</string>
     <string name="submit_label">Submit</string>
-    <string name="title_activity_car">CarActivity</string>
+    <string name="title_activity_car">Grease Wrench Options</string>
     <string name="enter_oil_change">Enter Oil Change</string>
     <string name="enter_new_maint">Enter New Maintenance</string>
-    <string name="view_maint_history">View Maintenance History</string>
-    <string name="title_activity_enter_oil_change">EnterOilChangeActivity</string>
+    <string name="view_maint_history">Car Maintenance History</string>
+    <string name="title_activity_enter_oil_change">Enter Oil Change</string>
     <string name="enter_date_label">Enter Date:</string>
-    <string name="title_activity_select_car">SelectCarActivity</string>
+    <string name="title_activity_select_car">Select A Car</string>
+    <string name="oilChangeStr">Oil Change</string>
+    <string name="title_activity_display_car_maint_hist">Car Maintenance History</string>
+    <string name="title_activity_enter_car_maint">EnterCarMaintActivity</string>
+    <string name="select_maintenance_type_label">Select Maintenance Type</string>
+    <string name="enter_date_of_maintenace_performed_label">Enter Date of Maintenace Performed</string>
+    <string name="enter_price_of_maintenance_label">Enter Price of Maintenance</string>
 </resources>
